@@ -1,8 +1,5 @@
 #include "shell.h"
-void releaseCommands(char **args, char **front);
-char *pid(void);
-char *get_env_value(char *beginning, int len);
-void substituteVariables(char **args, int *exe_ret);
+
 /**
 * releaseCommands - Frees up memory taken by args.
 * @args: A null-terminated double pointer containing commands/arguments.
@@ -109,10 +106,10 @@ k = j + 2;
 else if (old_line[j + 1])
 {
 /* extract the variable name to search for */
-(k = j + 1; old_line[k] &&
-old_line[k] != '$' &&
+for (k = j + 1; old_line[k] && old_line[k] != '$' &&
 old_line[k] != ' ';
-k++);
+k++)
+;
 len = k - (j + 1);
 replacement = get_env_value(&old_line[j + 1], len);
 }
@@ -133,4 +130,6 @@ free(old_line);
 *line = new_line;
 old_line = new_line;
 j = -1;
+}
+}
 }

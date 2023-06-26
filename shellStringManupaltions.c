@@ -1,8 +1,5 @@
 #include "shell.h"
-int calculateStringLength(const char *s);
-char *copyString(char *dest, const char *src);
-char *concatenateStrings(char *dest, const char *src);
-char *concatenateStringsWithLength(char *dest, const char *src, size_t n);
+
 /**
 * calculateStringLength - Returns the length of a string.
 * @s: A pointer to the characters string.
@@ -12,7 +9,9 @@ int calculateStringLength(const char *s)
 {
 int length = 0;
 if (!s)
-for (length = 0; s[length], length++);
+return (length);
+for (length = 0; s[length]; length++)
+	;
 return (length);
 }
 /**

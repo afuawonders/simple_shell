@@ -1,8 +1,4 @@
 #include "shell.h"
-char *findFirstOccurrence(char *s, char c);
-int calculateStringSpan(char *s, char *accept);
-int compareStrings(char *s1, char *s2);
-int compareStringsWithLength(const char *s1, const char *s2, size_t n);
 /**
 * findFirstOccurrence - Locates a character in a string.
 * @s: The string to be searched.

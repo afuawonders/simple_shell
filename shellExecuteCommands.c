@@ -1,9 +1,4 @@
 #include "shell.h"
-char *getArguments(char *line, int *exe_ret);
-int executeCommands(char **args, char **front, int *exe_ret);
-int runCommands(char **args, char **front, int *exe_ret);
-int handleCommands(int *exe_ret);
-int validateCommands(char **args);
 /**
 * getArguments - Gets a command from standard input.
 * @line: A buffer to store the command.

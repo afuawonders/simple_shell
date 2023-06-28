@@ -1,5 +1,5 @@
-#include "shell.h"
-void sig_handler(int sig);
+#include "shellInit.c"
+
 
 char *name;
 int hist;
@@ -8,6 +8,7 @@ alias_t *aliases;
 * sig_handler - Prints a new prompt upon a signal.
 * @sig: The signal.
 */
+
 void sig_handler(int sig)
 {
 char *new_prompt = "\n$ ";
@@ -15,6 +16,7 @@ char *new_prompt = "\n$ ";
 signal(SIGINT, sig_handler);
 write(STDIN_FILENO, new_prompt, 3);
 }
+
 /**
 * executeCommand - executeCommands a command in a child process.
 * @args: An array of arguments.
@@ -22,6 +24,7 @@ write(STDIN_FILENO, new_prompt, 3);
 * Return: If an error occurs - a corresponding error code.
 *         O/w - The exit value of the last executeCommandd command.
 */
+
 int executeCommand(char **args, char **front)
 {
 pid_t child_pid;
@@ -69,6 +72,7 @@ if (flag)
 free(command);
 return (ret);
 }
+
 /**
 * main - Runs a simple UNIX command interpreter.
 * @argc: The number of arguments supplied to the program.

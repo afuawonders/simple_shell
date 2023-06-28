@@ -12,6 +12,7 @@ int permissions(char *file_path)
 char *error, *hist_str;
 int len;
 hist_str = intToString(hist);
+
 if (!hist_str)
 return (127);
 len = calculateStringLength(name) + calculateStringLength(hist_str) +

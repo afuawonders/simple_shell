@@ -37,6 +37,7 @@ typedef struct list_s
  * @name: The name of the builtin command.
  * @function: A function pointer to the builtin command's function.
  */
+
 typedef struct builtin_s
 {
 	char *name;
